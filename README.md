@@ -76,7 +76,7 @@ Content-Type: application/json
 			"littera": "A",
 			"zipCode" : "11134",
 			"comment": "",
-			"isCustomerNode": true /* This would be Stokab specific and only implemented if no other soultion can be found for customer-nodes */
+			"isCustomerNode": true /* This would be specific and only implemented if no other soultion can be found for customer-nodes */
 			}
 	},
 	"to": {  /* May be set to null if any product only requires one point (address). E.g. Star. */ 
@@ -123,7 +123,7 @@ Content-Type: application/json
 ```javascript
 [
 	{
-		"supplier": "STOKAB",
+		"supplier": "supplier",
 		"products": [
 			{
 				"productId" : "8u3-3563-3635-365-ff",
@@ -249,7 +249,7 @@ Content-Type: application/json
 ```
 ```javascript
 {
-	"supplier": "STOKAB",
+	"supplier": "supplier",
 	"product" : {
 		"productId": "0d13c5e0-ce23-41a0-87b5-f480479fa71e", 
 		"name": "Point2Point",
@@ -259,7 +259,7 @@ Content-Type: application/json
 	"toPointId": "ABC124",
 	"comment": "Lorem ipsum", /* When comment is present the request will be async */
 	"redundancy": {
-		"type": "Full", /* 'NoReduncancy', 'Normal'. (Full redundancy not availible from Stokab-api.) */
+		"type": "Full", /* 'NoReduncancy', 'Normal'. (Full redundancy not availible from price-api.) */
 		"toPointId": "CBA123"
 	},
 	"customerType": "Commercial", /* "e.g. 'Commercial', 'Residential'" */
@@ -307,7 +307,7 @@ Content-Type: application/json
 		"createDateTime": "2016-08-21T08:01:06.000Z",
 		"doneDateTime": "2016-08-22T10:15:01.000Z", /* "Should be null if not yet done." */
 	},
-	"supplier": "STOKAB",
+	"supplier": "supplier",
 	"offerValidUntilDate": "2016-01-31",
 	"connectionId": "", /* "May be set to the identifier for the connection if that is already generated when inquiry is answered." */
 	"deliveryDurationDays": 20, /* "Days from order to delivered connection." */
@@ -408,7 +408,7 @@ Content-Type: application/json
 		"createDateTime": "2016-08-21T08:01:06.000Z",
 		"doneDateTime": "2016-08-22T10:15:01.000Z", /* "Should be null if not yet done." */
 	},
-	"supplier": "STOKAB",
+	"supplier": "supplier",
 	"offerValidUntilDate": "2016-01-31",
 	"connectionId": "",
 	"deliveryDurationDays": 20,
@@ -595,7 +595,7 @@ Content-Type: application/json
 	"orderId": "fc6cd754-6a30-11e2-a585-4fc569185689",
 	"orderNumber": "ST-9847598475", 
 	"referenceId": "CH-12345",
-	"supplier": "STOKAB",
+	"supplier": "supplier",
 	"product": "Point2Point",
 	"status": {
 		"state": "ORDERED",
@@ -625,7 +625,7 @@ Content-Type: application/json
 	"orderId": "fc6cd754-6a30-11e2-a585-4fc569185689",
 	"orderNumber": "ST-9847598475", 
 	"referenceId": "CH-12345",
-	"supplier": "STOKAB",
+	"supplier": "supplier",
 	"product": "Point2Point",
 	"status": {
 		"state": "DELIVERED", /* "ORDERED", "DELIVERED", "REJECTED" */
