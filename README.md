@@ -87,12 +87,12 @@ Content-Type: application/json
 			"number": "52",
 			"littera": "A",
 			"zipCode" : "11134",
-			"comment": "",
-			"redundancy": {
-				"type": "Full", /* "'Normal', 'Full'" */
-				"toPointId": "" /* May be set to null */
-			}
+			"comment": ""			
 		}
+	},
+	"redundancy": {
+		"type": "Full", /* "'Normal', 'Full'" */
+		"toPointId": "" /* May be set to null */
 	},
 	"customerType": "Commercial", /* E.g. 'Commercial', 'Residential' */
 	"serviceLevel": "Premium", /* E.g. 'Base', 'Gold', 'Premium' */
