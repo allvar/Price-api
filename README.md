@@ -92,6 +92,7 @@ Content-Type: application/json
 				"type": "Full", /* "'Normal', 'Full'" */
 				"toPointId": "" /* May be set to null */
 			}
+		}
 	},
 	"customerType": "Commercial", /* E.g. 'Commercial', 'Residential' */
 	"serviceLevel": "Premium", /* E.g. 'Base', 'Gold', 'Premium' */
