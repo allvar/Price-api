@@ -77,7 +77,7 @@ Content-Type: application/json
 			"zipCode" : "11134",
 			"comment": "",
 			"isCustomerNode": true /* This would be specific and only implemented if no other soultion can be found for customer-nodes */
-			}	
+		}	
 	},
 	"to": {  /* May be set to null if any product only requires one point (address). E.g. Star. */ 
 		"pointId": "ABC123",
