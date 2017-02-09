@@ -717,7 +717,7 @@ Content-Type: application/json
 ```javascript
 [
 	{
-		"name": "ComHem",
+		"name": "Client",
 		"clientNumber": "9834",
 		"invoiceGroupid": "47193bdf-7855-499b-96a1-f9d387556a9e"
 
