@@ -746,3 +746,28 @@ Content-Type: application/json
 	...
 ]
 ```
+# 5. Invoice Group
+### Hämta alla fakturamottagare för specifik kund
+
+***Request:***
+
+```http
+GET /api/1.0/invoiceGroup HTTP/1.1
+```
+
+***Response:***
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+```
+```javascript
+[
+	{
+		"name": "Client",
+		"clientNumber": "9834",
+		"invoiceGroupid": "47193bdf-7855-499b-96a1-f9d387556a9e"
+
+	},
+	...
+]
