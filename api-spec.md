@@ -174,8 +174,8 @@ Content-Type: application/json
 			"CDE678",
 			"CDE901"
 		]
-	},
-	...
+	}
+	
 
 ```
 
