@@ -69,7 +69,7 @@ GET /api/1.0/availability?city={city}&street_name={streetName}&street_number={st
 eller sökning på punkt-id
 
 ```http
-GET /api/1.0/availability?pointId={pointId} HTTP/1.1
+GET /api/1.0/availability/{pointId} HTTP/1.1
 ```
 
 I de fall där den önskade punkten är en s.k. kundnod måste en header följa med i anropen. 
