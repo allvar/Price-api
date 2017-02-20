@@ -130,11 +130,8 @@ eller sökning på punkt-id
 GET /api/1.0/availability?pointId={pointId} HTTP/1.1
 ```
 
-eller sökning på en koordinat och radie som returnerar de närmaste platserna som är inom angiven radie
-
-```http
-GET /api/1.0/availability?xCoordinate={xCoordinate}&yCoordinate={yCoordinate}&radius={radius} HTTP/1.1
-```
+I de fall där den önskade punkten är en s.k. kundnod måste en header följa med i anropen. 
+'IsCustomerNode', 'true'
 
 ***Response:***
 
