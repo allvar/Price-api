@@ -55,7 +55,7 @@ Content-Type: application/json
 ]
 ```
 
-# 2. Availability API
+# 2. Availability API - Med sökparameter 
 ### Hämta detaljerad information och leverantörers fiberstatus på en specifik plats (adress), men kan också returnera mer än 1 plats om sökningen inte är tillräckligt specifik.
 
 ***Request:***
@@ -64,12 +64,6 @@ Sökning via adress
 
 ```http
 GET /api/1.0/availability?city={city}&street_name={streetName}&street_number={streetNumber}&street_littera={streetLittera} HTTP/1.1
-```
-
-eller sökning på punkt-id
-
-```http
-GET /api/1.0/availability/{pointId} HTTP/1.1
 ```
 
 I de fall där den önskade punkten är en s.k. kundnod måste en header följa med i anropen. 
@@ -121,6 +115,68 @@ Content-Type: application/json
 	},
 	...
 ]
+```
+
+# 2.1 Availability API - Med punktid
+### Hämta detaljerad information och leverantörers fiberstatus på en specifik plats med punktid där enbart en eller ingen träff kan förekomma.
+
+***Request:***
+
+Sökning med punktid efter specifik resurs
+
+```http
+GET /api/1.0/availability/{pointId} HTTP/1.1
+```
+
+I de fall där den önskade punkten är en s.k. kundnod måste en header följa med i anropen. 
+'IsCustomerNode', 'true'
+
+***Response:***
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+
+	{
+		"pointId": "ABC123",
+		"address": {
+			"street": "Testvägen",
+			"number": "100",
+			"littera": "",
+			"postalCode": "10000",
+			"city": "Ankeborg",
+			"countryCode": "SE"
+		},
+		"building": {
+			"distinguisher": "", // "set if something is needed to distinguish a specific building on the address"
+			"type": "MDU" // "'MDU' = apartment building, 'SDU' = villa"
+		},
+		"realEstate": {
+			"label": "PENGABINGEN 1",
+			"municipality": "ANKEBORG"
+		},
+		"coordinate": {
+			"latitude": 6581619.085,
+			"longitude": 1628539.32,
+			"projection": "WGS84"
+		},
+		"district": "GAMLA STAN",
+		"suppliers": [
+			{
+				"name": "STOKAB",
+				"fiberStatus": "IN_REAL_ESTATE", // "'AT_ADDRESS', 'AT_SITE_BOUNDARY'"
+				"statusValidationRequired": true // "indicates if the fiberStatus needs manual validation to assure availability"
+			},
+			...
+		],
+	 	"relatedPointIds": [ // "list of other nearby points (addresses) which could be used instead of the searched point (address)"
+			"CDE678",
+			"CDE901"
+		]
+	},
+	...
+
 ```
 
 # 3. Price Estimate API
