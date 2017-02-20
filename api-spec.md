@@ -55,64 +55,6 @@ Content-Type: application/json
 ]
 ```
 
-## Begränsningsmekanism
-
-För att bara få inkrementella uppdateringar av adresser så används If-Modified-Since. På det viset kan anropet ske ofta men fortfarande vara billigt.
-
-Vid första anropet sker ingen begränsning, utan då frågar man om det fullständiga resultatet. Vid påföljande anrop används If-Modified-Since. Värdet för headern är föregående svars värde på Last-Modified.
-
-Av den anledningen är "Last-Modified" obligatoriskt vid HTTP Status 200.
-Begränsningsmekanism - Exempel
-
-Exempel på anropssekvens:
-
-***Request:***
-
-```http
-GET /api/1.0/feasibility HTTP/1.1
-```
-
-***Response:***
-
-```http
-HTTP/1.1 200 OK
-Last-Modified: Mon, 11 Jan 2016 12:03:28 GMT
-Content-Type: application/json
-
-...
-```
-
-Vid påföljande anrop skickas en "If-Modified-Since"-header för att bara be om uppdaterade poster.
-
-***Request:***
-
-```http
-GET /api/1.0/feasibility HTTP/1.1
-If-Modified-Since: Mon, 11 Jan 2016 12:03:28 GMT
-
-...
-```
-
-Om det finns uppdaterade poster kan svaret se ut så här:
-
-***Response:***
-
-```http
-HTTP/1.1 200 OK
-Last-Modified: Tue, 12 Jan 2016 09:54:55 GMT
-Content-Type: application/json
-
-...
-```
-
-Om det inte finns uppdaterade poster ser svaret istället ut så här:
-
-***Response:***
-
-```http
-HTTP/1.1 304 Not Modified
-```
-
 # 2. Availability API
 ### Hämta detaljerad information och leverantörers fiberstatus på en specifik plats (adress), men kan också returnera mer än 1 plats om sökningen inte är tillräckligt specifik.
 
