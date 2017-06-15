@@ -197,6 +197,8 @@ Content-Type: application/json
 		"pointId": "ABC789", 
 		"comment": "", // "if an additional comment for the to point could be useful for the supplier"
 	},
+	"frameworkAgreementId": "cb850694-57e6-46c7-beef-8fb7574b4919",
+	"invoiceGroupId": "13618b8c-c727-4927-9f17-059adec027ce",
 	"redundancy": { // "may be set to null if no redundancy is wanted"
 		"type": "Full", // "'Normal', 'Full'"
 		"toPointId": "CBA123"
