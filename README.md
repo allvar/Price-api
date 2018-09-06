@@ -64,7 +64,7 @@ Content-Type: application/json
 		"coordinate": {
 			"latitude": 6581619.085,
 			"longitude": 1628539.32,
-			"projection": "WGS84"
+			"projection": "" // Can be WGS84, RT90 or SWEREF90 or variants of these
 		},
 		"district": "GAMLA STAN",
 		"suppliers": [ // "Optional; should only be provided if not heavy too calculate."
@@ -129,7 +129,7 @@ Content-Type: application/json
 	"coordinate": {
 		"latitude": 6581619.085,
 		"longitude": 1628539.32,
-		"projection": "WGS84"
+		"projection": "" // Can be WGS84, RT90 or SWEREF90 or variants of these
 	},
 	"district": "GAMLA STAN",
 	"suppliers": [
@@ -186,7 +186,7 @@ Content-Type: application/json
 		"coordinate": {
 			"latitude": 6581619.085,
 			"longitude": 1628539.32,
-			"projection": "WGS84"
+			"projection": "" // Can be WGS84, RT90 or SWEREF90 or variants of these
 		},
 		"district": "GAMLA STAN",
 		"suppliers": [
